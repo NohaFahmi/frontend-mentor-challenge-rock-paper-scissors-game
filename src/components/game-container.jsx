@@ -1,12 +1,13 @@
 import '../styles/game-container.scss';
 import GameHeader from './game-header';
+import GameStart from './game-start';
 
 const GameContainer = () => {
     return (
         <div className="game__container">
         <GameHeader/>
-        {/* <GameStart/>
-        <GameResults/> */}
+        <GameStart/>
+        {/* <GameResults/> */}
         {/* <div class="game__rules-btn-wrapper">
           <button class="rules-btn">Rules</button>
         </div> */}
