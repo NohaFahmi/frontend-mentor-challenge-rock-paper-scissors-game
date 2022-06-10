@@ -1,0 +1,31 @@
+.game__header {
+  border: 2px solid var(--header-outline);
+  border-radius: 10px;
+  color: #eee;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  width: 100%;
+  &_title {
+    width: 10%;
+    line-height: 0.8;
+    font-size: 28px;
+    text-align: left;
+  }
+  &_results {
+    padding: 10px 35px;
+    background-color: #eee;
+    border-radius: 5px;
+    p {
+      margin-bottom: 0;
+      color: var(--score-text);
+      font-size: 14px;
+    }
+    span {
+      color: var(--dark-text);
+      font-weight: 700;
+      font-size: 32px;
+    }
+  }
+}
