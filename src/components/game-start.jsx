@@ -1,4 +1,5 @@
 import "../styles/game-start.scss";
+import GameChoiceButton from "./game-choice-btn";
 
 const GameStart = () => {
   const gameStartBg = `${process.env.PUBLIC_URL}/images/bg-traingle.svg`;
@@ -17,31 +18,25 @@ const GameStart = () => {
       }}
     >
       <div className="choice-wrappers">
-        <div className="game-start__wrapper_paper_choice choice-btn">
-          <div className="game-start__wrapper_paper choice-btn-content">
-            <img
-              src={process.env.PUBLIC_URL + "/images/icon-paper.svg"}
-              alt="paper"
-            />
-          </div>
-        </div>
-        <div className="game-start__wrapper_scissors_choice choice-btn">
-          <div className="game-start__wrapper_scissors choice-btn-content">
-            <img
-              src={process.env.PUBLIC_URL + "/images/icon-scissors.svg"}
-              alt="scissors"
-            />
-          </div>
-        </div>
+        <GameChoiceButton
+          choice={{
+            name: "paper",
+            gradiant: ["hsl(230, 89%, 62%)", "hsl(230, 89%, 65%)"],
+          }}
+        />
+        <GameChoiceButton
+          choice={{
+            name: "scissors",
+            gradiant: ["hsl(39, 89%, 49%) ", "hsl(40, 84%, 53%)"],
+          }}
+        />
       </div>
-      <div className="game-start__wrapper_rock_choice choice-btn">
-        <div className="game-start__wrapper_rock choice-btn-content">
-          <img
-            src={process.env.PUBLIC_URL + "/images/icon-rock.svg"}
-            alt="rock"
-          />
-        </div>
-      </div>
+      <GameChoiceButton
+        choice={{
+          name: "rock",
+          gradiant: ["hsl(349, 71%, 52%)", "hsl(349, 70%, 56%)"],
+        }}
+      />
     </div>
   );
 };
