@@ -1,11 +1,46 @@
 .game__container {
-  height: 90vh;
+  // height: 90vh;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 80px;
   align-items: center;
   padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
   &_header-wrapper {
     min-width: 40%;
+    margin-bottom: 10px;
+  }
+  &_game-rules {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    &_modal {
+      position: absolute;
+      top: 150px;
+      opacity: 0;
+      transform: translateY(1000px);
+      transition: all 500ms ease-in-out;
+      overflow: hidden;
+      z-index: 0;
+      &.opened {
+        opacity: 1;
+        transform: translateY(0);
+        z-index: 1;
+      }
+    }
+    .rules-btn {
+      padding: 10px 40px;
+      background-color: transparent;
+      border: 1px solid #eee;
+      color: #eee;
+      font-weight: 800;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: #eee;
+        color: var(--dark-text);
+      }
+    }
   }
 }

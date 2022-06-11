@@ -5,9 +5,11 @@ import GameResults from "./game-results";
 import { gameActions } from "../store/gameReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import GameRulesModal from "./game-rules-modal";
 const GameContainer = () => {
   const dispatch = useDispatch();
   const [showResults, setShowResults] = useState(false);
+  const [isModalOpened, setIsModalOpened] = useState(false);
   const gameScore = useSelector((state) => state.score);
   const elementsChoicesList = [
     {
@@ -28,7 +30,12 @@ const GameContainer = () => {
     dispatch(gameActions.pickRandomChoiceForHouse());
   };
   return (
-    <div className="game__container">
+    <div
+      className="game__container"
+      onClick={() => {
+        setIsModalOpened(false);
+      }}
+    >
       <div className="game__container_header-wrapper">
         <GameHeader score={gameScore} />
       </div>
@@ -46,9 +53,28 @@ const GameContainer = () => {
           }}
         />
       )}
-      {/* <div class="game__rules-btn-wrapper">
-          <button class="rules-btn">Rules</button>
-        </div> */}
+      <div class="game__container_game-rules">
+        <button
+          class="rules-btn"
+          onClick={(event) => {
+            event.stopPropagation();
+            setIsModalOpened(true);
+          }}
+        >
+          Rules
+        </button>
+      </div>
+      <div
+        className={`game__container_game-rules_modal ${
+          isModalOpened ? "opened" : ""
+        }`}
+      >
+        <GameRulesModal
+          closeModal={() => {
+            setIsModalOpened(false);
+          }}
+        />
+      </div>
     </div>
   );
 };
