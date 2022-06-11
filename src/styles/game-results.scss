@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 80px;
   &_player-side {
     display: flex;
     flex-direction: column;
@@ -21,7 +22,7 @@
 
   &_result {
     &_title {
-      font-size: 32px;
+      font-size: 40px;
       color: #eee;
       text-transform: uppercase;
       font-weight: 700;

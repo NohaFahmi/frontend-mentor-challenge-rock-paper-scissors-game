@@ -1,10 +1,18 @@
 import "../styles/game-start.scss";
 import GameChoiceButton from "./game-choice-btn";
+import { gameActions } from "../store/gameReducer";
+import { useDispatch } from "react-redux";
 
-const GameStart = () => {
+const GameStart = ({ onElementSelected, ChoicesList }) => {
   const gameStartBg = `${process.env.PUBLIC_URL}/images/bg-traingle.svg`;
   const gameStartWrapperStyles = {
     backgroundImage: `url(${gameStartBg})`,
+  };
+
+  const dispatch = useDispatch();
+  const onChooseElement = (elementIndex) => {
+    dispatch(gameActions.startGame(elementIndex));
+    onElementSelected();
   };
   return (
     <div
@@ -18,25 +26,28 @@ const GameStart = () => {
       }}
     >
       <div className="choice-wrappers">
-        <GameChoiceButton
-          choice={{
-            name: "paper",
-            gradiant: ["hsl(230, 89%, 62%)", "hsl(230, 89%, 65%)"],
+        <div
+          onClick={() => {
+            onChooseElement(0);
           }}
-        />
-        <GameChoiceButton
-          choice={{
-            name: "scissors",
-            gradiant: ["hsl(39, 89%, 49%) ", "hsl(40, 84%, 53%)"],
+        >
+          <GameChoiceButton choice={ChoicesList[0]} />
+        </div>
+        <div
+          onClick={() => {
+            onChooseElement(1);
           }}
-        />
+        >
+          <GameChoiceButton choice={ChoicesList[1]} />
+        </div>
       </div>
-      <GameChoiceButton
-        choice={{
-          name: "rock",
-          gradiant: ["hsl(349, 71%, 52%)", "hsl(349, 70%, 56%)"],
+      <div
+        onClick={() => {
+          onChooseElement(2);
         }}
-      />
+      >
+        <GameChoiceButton choice={ChoicesList[2]} />
+      </div>
     </div>
   );
 };
