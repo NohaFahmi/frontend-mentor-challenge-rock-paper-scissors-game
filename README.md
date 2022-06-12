@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub Repo](https://github.com/NohaaAa/frontend-mentor-challenge-rock-paper-scissors-game)
-- Live Site URL: [Frontend Mentor | Rock, Paper, Scissors Game](https://rock-paper-scissors-game-lovat.vercel.app/)
+- Live Site URL: [Frontend Mentor | Rock, Paper, Scissors Game](https://rock-paper-scissors-game-challenge.vercel.app/)
 
 
 ### Built with

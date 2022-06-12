@@ -29,6 +29,7 @@ const GameContainer = () => {
   const onGameStarting = () => {
     setShowResults(true);
     setDataIsLoading(true);
+    setIsModalOpened(false);
     setTimeout(() => {
       dispatch(gameActions.pickRandomChoiceForHouse());
       setDataIsLoading(false);
