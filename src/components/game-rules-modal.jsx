@@ -18,6 +18,15 @@ const GameRulesModal = ({ closeModal }) => {
           alt="game-rules"
         />
       </div>
+      <button
+        className="game-rules-modal_close-btn mobile-btn"
+        onClick={closeModal}
+      >
+        <img
+          src={process.env.PUBLIC_URL + "/images/icon-close.svg"}
+          alt="icon-close"
+        />
+      </button>
     </div>
   );
 };
