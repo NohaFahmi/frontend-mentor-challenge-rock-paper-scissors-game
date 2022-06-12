@@ -1,8 +1,10 @@
 .game {
   &__choice-btn {
-    // width: 140px;
-    // height: 140px;
     border-radius: 50%;
+    @media (max-width: 991px) {
+      width: 140px !important;
+      height: 140px !important;
+    }
     cursor: pointer;
     &-content {
       width: 100%;

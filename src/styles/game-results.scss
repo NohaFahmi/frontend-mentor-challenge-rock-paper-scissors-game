@@ -3,12 +3,17 @@
   justify-content: space-between;
   align-items: center;
   gap: 80px;
+  @media (max-width: 991px) {
+    gap: 40px;
+    flex-wrap: wrap;
+  }
   &_player-side {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 25px;
+    order: 0;
     // .player-side_choice {
     // }
   }
@@ -21,6 +26,11 @@
   }
 
   &_result {
+    order: 1;
+    @media (max-width: 600px) {
+      order: 2;
+      margin: 0 auto;
+    }
     &_title {
       font-size: 40px;
       color: #eee;
@@ -41,17 +51,50 @@
       &:hover {
         background-color: transparent;
         color: #eee;
-        transition: all ease-in-out 0.2s;
       }
     }
   }
   &_house-side {
+    order: 2;
+    @media (max-width: 600px) {
+      order: 1;
+    }
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 25px;
-    // .house-side_choice {
-    // }
+  }
+  .choices-loader {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 300px;
+    overflow: hidden;
+    @media (max-width: 991px) {
+      height: 140px;
+    }
+    .house-side_choice:first-of-type {
+      animation: gameRandomDesktop 0.5s linear infinite;
+      @media (max-width: 991px) {
+        animation: gameRandomMobile 0.5s linear infinite;
+      }
+    }
+  }
+  @keyframes gameRandomDesktop {
+    0% {
+      margin-top: 0px;
+    }
+    100% {
+      margin-top: -600px;
+    }
+  }
+  @keyframes gameRandomMobile {
+    0% {
+      margin-top: 0px;
+    }
+    100% {
+      margin-top: -400px;
+    }
   }
 }

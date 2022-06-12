@@ -4,11 +4,17 @@
   align-items: center;
   justify-content: center;
   gap: 100px;
+  @media (max-width: 991px) {
+    gap: 50px;
+  }
   .choice-wrappers {
     display: flex;
     justify-content: space-between;
     gap: 150px;
     margin: -25px auto;
+    @media (max-width: 991px) {
+      gap: 70px;
+    }
   }
   .choice-btn {
     width: 140px;

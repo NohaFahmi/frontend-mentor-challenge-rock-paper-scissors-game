@@ -11,6 +11,7 @@ const GameContainer = () => {
   const [showResults, setShowResults] = useState(false);
   const [isModalOpened, setIsModalOpened] = useState(false);
   const gameScore = useSelector((state) => state.score);
+  const [dataIsLoading, setDataIsLoading] = useState(true);
   const elementsChoicesList = [
     {
       name: "paper",
@@ -27,7 +28,11 @@ const GameContainer = () => {
   ];
   const onGameStarting = () => {
     setShowResults(true);
-    dispatch(gameActions.pickRandomChoiceForHouse());
+    setDataIsLoading(true);
+    setTimeout(() => {
+      dispatch(gameActions.pickRandomChoiceForHouse());
+      setDataIsLoading(false);
+    }, 1000);
   };
   return (
     <div
@@ -51,11 +56,12 @@ const GameContainer = () => {
           onPlayAgain={() => {
             setShowResults(false);
           }}
+          choiceLoading={dataIsLoading}
         />
       )}
-      <div class="game__container_game-rules">
+      <div className="game__container_game-rules">
         <button
-          class="rules-btn"
+          className="rules-btn"
           onClick={(event) => {
             event.stopPropagation();
             setIsModalOpened(true);

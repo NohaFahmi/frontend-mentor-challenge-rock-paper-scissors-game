@@ -7,16 +7,27 @@
   padding: 15px 20px;
   text-transform: uppercase;
   width: 100%;
+  align-items: center;
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+  }
   &_title {
-    width: 10%;
-    line-height: 0.8;
-    font-size: 28px;
+    width: fit-content;
     text-align: left;
+    img {
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      width: 40%;
+    }
   }
   &_results {
-    padding: 10px 35px;
+    padding: 20px 40px;
     background-color: #eee;
     border-radius: 5px;
+    @media (max-width: 768px) {
+      padding: 10px 30px;
+    }
     p {
       margin-bottom: 0;
       color: var(--score-text);
@@ -25,7 +36,7 @@
     span {
       color: var(--dark-text);
       font-weight: 700;
-      font-size: 32px;
+      font-size: 40px;
     }
   }
 }
