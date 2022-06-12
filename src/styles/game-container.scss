@@ -59,4 +59,11 @@
       }
     }
   }
+  .attribution {
+    margin-top: -30px;
+    color: #eee;
+    a {
+      color: var(--header-outline);
+    }
+  }
 }
